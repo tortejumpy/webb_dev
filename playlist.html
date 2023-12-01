@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Playlist Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        #form-section,
+        #result-section {
+            margin-bottom: 20px;
+        }
+
+        label {
+            margin-bottom: 8px;
+        }
+
+        select, button {
+            margin-top: 8px;
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        #playlistResult {
+            margin-top: 10px;
+        }
+
+        /* Add more styling as needed */
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Music Playlist Generator</h1>
+</header>
+
+<main>
+    <section id="form-section">
+        <label for="mood">Select your mood:</label>
+        <select id="mood" required>
+            <option value="happy">Happy</option>
+            <option value="sad">Sad</option>
+            <option value="energetic">Energetic</option>
+            <!-- Add more mood options as needed -->
+        </select>
+
+        <label for="genre">Select your genre:</label>
+        <select id="genre" required>
+            <option value="pop">Pop</option>
+            <option value="rock">Rock</option>
+            <option value="hiphop">Hip Hop</option>
+            <!-- Add more genre options as needed -->
+        </select>
+
+        <button onclick="generatePlaylist()">Generate Playlist</button>
+    </section>
+
+    <section id="result-section">
+        <h2>Playlist Results</h2>
+        <div id="playlistResult"></div>
+    </section>
+</main>
+
+<script>
+    function generatePlaylist() {
+        const mood = document.getElementById('mood').value;
+        const genre = document.getElementById('genre').value;
+
+        // In a real application, you would make an API request to fetch the playlist based on mood and genre.
+        // For simplicity, we'll just display a message here.
+        const playlistResult = document.getElementById('playlistResult');
+        playlistResult.innerHTML = `<p>Your ${mood} ${genre} playlist is ready!</p>`;
+    }
+</script>
+
+</body>
+</html>
